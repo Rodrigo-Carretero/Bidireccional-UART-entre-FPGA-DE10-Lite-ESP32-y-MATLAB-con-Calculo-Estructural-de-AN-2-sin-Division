@@ -1,0 +1,13 @@
+Para ejecutar el banco de pruebas con Icarus Verilog, si lo tienes instalado:
+
+1) Abre terminal en la carpeta serial/.
+2) Ejecuta:
+   iverilog -g2012 -s tb_serial -o tb_sim.vvp uart_rx.v uart_tx.v top_uart_de10lite.v tb/tb_serial.v
+   vvp tb_sim.vvp
+
+El testbench usa una UART acelerada (10 ciclos por bit) para agilizar la prueba,
+y verifica casos con n>8, desbordamiento y casos especiales.
+
+NOTA: el banco de pruebas no se ha ejecutado en este entorno porque
+Icarus Verilog/Quartus no estan instalados aqui. Los calculos de referencia
+si fueron comprobados con Python. El hardware se debe comprobar en Quartus.
